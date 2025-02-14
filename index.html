@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créer un compte</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="logo">
+        <img src="https://logos-download.com/wp-content/uploads/2016/03/Amazon_Logo_2000.png" alt="Logo">
+    </div>
+    <div class="container">
+        <h2>Créer un compte</h2>
+        <form>
+            <div class="box-input">
+                <label for="name">Votre nom</label>
+                <input type="text" id="name" placeholder="Entrez votre nom" required>
+            </div>
+            <div class="box-input">
+                <label for="email">Numéro de téléphone portable ou adresse e-mail</label>
+                <input type="email" id="email" placeholder="Entrez votre e-mail" required>
+            </div>
+            <div class="box-input">
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" placeholder="Créez un mot de passe" required>
+                <p class="password-info">
+                    Les mots de passe doivent au moins avoir 6 caractères.</p>
+            </div>
+            <div class="box-input">
+                <label for="confirmer">Entrez le mot de passe à nouveau</label>
+                <input type="password" id="confirmer" placeholder="Confirmez votre mot de passe" required>
+            </div>
+            <button type="submit" class="btn-creer">Créer votre compte</button>
+        </form>
+        <p class="termes">En créant un compte, vous acceptez les conditions 
+            d'utilisation et de vente d'Amazon. Consultez notre déclaration
+             de confidentialité, notre politique relative aux cookies ainsi
+             que notre politique relative aux publicités ciblées par centres d’intérêts.</p>
+             <hr>
+
+             <div class="connecter">
+                <p>Vous achetez pour votre entreprise ? <br>
+                    <a href="#"> Créez un compte professionnel gratuit</a>.</p>
+            </div>
+             <hr>
+
+             <div class="connecter">
+                <p>
+                    Vous possédez déjà un compte ?
+                    <a href="#">  Identifiez-vous </a></p>
+            </div>
+    </div>
+  
+</body>
+</html>
