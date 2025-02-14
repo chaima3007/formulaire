@@ -16,21 +16,21 @@
         <form>
             <div class="box-input">
                 <label for="name">Votre nom</label>
-                <input type="text" id="name" placeholder="Entrez votre nom" required>
+                <input type="text" id="name" placeholder="Entrez votre nom" >
             </div>
             <div class="box-input">
                 <label for="email">Numéro de téléphone portable ou adresse e-mail</label>
-                <input type="email" id="email" placeholder="Entrez votre e-mail" required>
+                <input type="text" id="email" placeholder="Entrez votre e-mail" >
             </div>
             <div class="box-input">
                 <label for="password">Mot de passe</label>
-                <input type="password" id="password" placeholder="Créez un mot de passe" required>
+                <input type="password" id="password" placeholder="Créez un mot de passe" >
                 <p class="password-info">
                     Les mots de passe doivent au moins avoir 6 caractères.</p>
             </div>
             <div class="box-input">
                 <label for="confirmer">Entrez le mot de passe à nouveau</label>
-                <input type="password" id="confirmer" placeholder="Confirmez votre mot de passe" required>
+                <input type="password" id="confirmer" placeholder="Confirmez votre mot de passe" >
             </div>
             <button type="submit" class="btn-creer">Créer votre compte</button>
         </form>
@@ -52,6 +52,67 @@
                     <a href="#">  Identifiez-vous </a></p>
             </div>
     </div>
+
+    <script>
+      
+        
+        const name = document.getElementById('name');
+        const email = document.getElementById('email');
+        const password = document.getElementById('password');
+        const confirmer = document.getElementById('confirmer');
+      
+        function validateEmail(email) {
+            const re = /\S+@\S+\.\S+/;
+            return re.test(email);
+        }
+        function validatePhone(phone) {
+            const re = /^[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}$/;
+            return re.test(phone);
+        }
+       
+        document.querySelector('form').addEventListener('submit', function(e) {
+          
+            e.preventDefault();
+           
+            if(name.value === '') {
+                alert('Le nom est obligatoire');
+                return;
+            }
+          
+            if(email.value === '') {
+                alert('L\'email est obligatoire');
+                return;
+            }
+      
+            if(!validateEmail(email.value)) {
+                alert('L\'email n\'est pas valide');
+                return;
+            }
+            
+            if(password.value === '') {
+                alert('Le mot de passe est obligatoire');
+                return;
+            }
+      
+            if(password.value.length < 6) {
+                alert('Le mot de passe doit avoir au moins 6 caractères');
+                return;
+            }
+            
+            if(password.value !== confirmer.value) {
+                alert('Les mots de passe ne correspondent pas');
+                return;
+            }
+            
+            console.log('Nom : ', name.value);
+            console.log('Email : ', email.value);
+            console.log('Mot de passe : ', password.value);
+            console.log('Confirmer : ', confirmer.value);
+
+            
+        });
+
+    </script>
   
 </body>
 </html>
